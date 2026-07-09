@@ -1,0 +1,33 @@
+{
+  "name": "lime-css-framework",
+  "version": "1.0.0",
+  "description": "A lightweight, modern CSS framework focused on simplicity, variables, and clean UI components.",
+  "main": "dist/lime.css",
+  "style": "dist/lime.css",
+  "files": [
+    "dist/",
+    "documentation/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "echo 'No build step - using pre-built CSS'"
+  },
+  "keywords": [
+    "css",
+    "css-framework",
+    "frontend",
+    "ui",
+    "lime"
+  ],
+  "author": "Lime CSS Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaik-obydullah/lime-css-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shaik-obydullah/lime-css-framework/issues"
+  },
+  "homepage": "https://github.com/shaik-obydullah/lime-css-framework#readme"
+}
