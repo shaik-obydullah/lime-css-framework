@@ -36,7 +36,7 @@
 
           <div class="header-right d-flex align-items-center">
             <div class="version-badge mr-4">
-              <span class="badge badge-success">v1.0.0</span>
+              <span class="badge badge-success">v1.0.1</span>
             </div>
 
             <div class="header-actions">
@@ -128,7 +128,7 @@
                 <i class="fas fa-bolt text-primary mr-2"></i>
                 Lightweight
               </h4>
-              <p>Only 25KB minified, with zero JavaScript dependencies.</p>
+              <p>Only 22KB minified, with zero JavaScript dependencies.</p>
             </div>
           </div>
           <div class="col-md-4 mb-4">
@@ -1959,12 +1959,6 @@
                 <td>≥1200px</td>
                 <td><code>.d-xl-flex</code></td>
               </tr>
-              <tr>
-                <td>Extra extra large</td>
-                <td><code>xxl</code></td>
-                <td>≥1200px</td>
-                <td><code>.d-xxl-block</code></td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -1998,6 +1992,7 @@
   --lime-primary: #32cd32;
   --lime-primary-dark: #28a428;
   --lime-primary-light: #80d080;
+  --lime-primary-hover: #2db82d;
   
   /* Override default variables */
   --border-radius: 0.5rem;
@@ -2115,11 +2110,49 @@ $spacer: 1.5rem;
         <h2>Changelog</h2>
         <p>Version history and updates for Lime CSS Framework.</p>
 
+        <!-- Version 1.0.1 -->
+        <div class="changelog-component">
+          <div class="version-header">
+            <h3 class="version-title">Version 1.0.1</h3>
+            <span class="version-badge badge-latest">Latest</span>
+          </div>
+
+          <p class="release-info">
+            <strong class="release-date">Released:</strong>
+            August 2026
+          </p>
+
+          <div class="features-section">
+            <h4 class="section-title">New Features</h4>
+            <ul class="feature-list">
+              <li class="feature-item">Badge component (plain + all color variants)</li>
+              <li class="feature-item">Flexbox utilities: flex-direction, wrap, justify-content, align-items, align-self, grow/shrink</li>
+              <li class="feature-item">Auto margin utilities (m-auto, ml-auto, mr-auto, mx-auto, my-auto)</li>
+            </ul>
+          </div>
+
+          <div class="features-section">
+            <h4 class="section-title">Breaking Changes</h4>
+            <ul class="feature-list">
+              <li class="feature-item">None</li>
+            </ul>
+          </div>
+
+          <div class="features-section">
+            <h4 class="section-title">Bug Fixes</h4>
+            <ul class="feature-list">
+              <li class="feature-item">CSS variables now actually power the theme - override --lime-primary and friends to re-theme the framework</li>
+              <li class="feature-item">Fixed responsive display utilities (d-sm through d-xl) firing at the wrong breakpoints</li>
+              <li class="feature-item">Fixed navbar links being white and hovering to blue - now dark with lime hover, plus .navbar-dark support</li>
+              <li class="feature-item">Tamed the reset so lists keep sensible default styling</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- Version 1.0.0 -->
         <div class="changelog-component">
           <div class="version-header">
             <h3 class="version-title">Version 1.0.0</h3>
-            <span class="version-badge badge-latest">Latest</span>
           </div>
 
           <p class="release-info">
@@ -2191,7 +2224,7 @@ $spacer: 1.5rem;
             <h3 class="version-title">Migration Guide</h3>
           </div>
 
-          <p class="mb-3">Since this is the first version, there are no migration steps. Future versions will include migration guides here.</p>
+          <p class="mb-3">Version 1.0.1 is a patch release with no breaking changes, so you can upgrade from 1.0.0 without any code changes.</p>
 
           <div class="changelog-callout callout-note">
             <p>
@@ -2205,7 +2238,7 @@ $spacer: 1.5rem;
         <div class="changelog-component">
           <div class="version-code">
             <pre><code class="language-html">&lt;!-- Current version --&gt;
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lime-css@1.0.0/dist/lime.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lime-css@1.0.1/dist/lime.min.css"&gt;
 
 &lt;!-- Always check for latest version --&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lime-css/dist/lime.min.css"&gt;</code></pre>
@@ -2255,7 +2288,7 @@ $spacer: 1.5rem;
       <!-- Footer -->
       <footer class="footer">
         <p>
-          Lime CSS Framework v1.0.0 • Created by
+          Lime CSS Framework v1.0.1 • Created by
           <a href="https://obydullah.com" target="_blank">Shaik Obydullah</a>
         </p>
         <p class="mt-2">Released under the MIT License • © 2025</p>

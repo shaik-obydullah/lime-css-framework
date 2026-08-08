@@ -1,8 +1,8 @@
 # Lime CSS Framework
 
-![Lime CSS Framework](https://img.shields.io/badge/Version-1.0.0-brightgreen)
+![Lime CSS Framework](https://img.shields.io/badge/Version-1.0.1-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-blue)
-![Size](https://img.shields.io/badge/Size-12%20KB-lightgrey)
+![Size](https://img.shields.io/badge/Size-22%20KB-lightgrey)
 
 A lightweight, modern CSS framework with a refreshing lime theme. Built for rapid prototyping and production-ready web development.
 
@@ -11,7 +11,7 @@ A lightweight, modern CSS framework with a refreshing lime theme. Built for rapi
 - 🎨 **Lime Themed** - Fresh green color scheme as primary
 - 📱 **Fully Responsive** - Mobile-first approach
 - 🎯 **12-Column Grid System** - Flexbox based
-- 🚀 **Lightweight** - Only 12KB minified
+- 🚀 **Lightweight** - Only 22KB minified
 - 🎨 **Utility Classes** - Comprehensive spacing, text, border utilities
 - 🎭 **Components** - Buttons, forms, tables, alerts, navbar
 - 🌐 **Browser Support** - Modern browsers and IE11+

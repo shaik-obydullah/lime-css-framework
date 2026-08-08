@@ -1,7 +1,7 @@
 /*!
  * ==========================================================
  * Name: Lime CSS Framework
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Shaik Obydullah
  * Author URI: https://obydullah.com
  * ==========================================================
@@ -25,7 +25,7 @@ Index
 13. Shadow Utilities
 14. Alert
 15. Code
-16. Navbar
+16. Navbar and Badge
 17. Responsive Images
 18. Visibility
 19. Float
@@ -34,16 +34,27 @@ Index
 22. Overflow
 23. Custom Lime Framework Classes
 24. Responsive Utilities
+25. Flex Utilities
 
 */
 
 /* ==========================================================================
    1. CSS Reset and Base Styles
    ========================================================================== */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+* {
   margin: 0;
+}
+
+ul,
+ol {
   padding: 0;
+  list-style: none;
 }
 
 html {
@@ -406,19 +417,19 @@ body {
 }
 
 .btn:focus {
-  box-shadow: 0 0 0 0.2rem rgba(50, 205, 50, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(var(--lime-primary-rgb, 50, 205, 50), 0.25);
 }
 
 /* Button Colors - Lime as primary */
 .btn-primary {
   color: #fff;
-  background-color: #32cd32;
-  border-color: #32cd32;
+  background-color: var(--lime-primary, #32cd32);
+  border-color: var(--lime-primary, #32cd32);
 }
 
 .btn-primary:hover {
-  background-color: #2db82d;
-  border-color: #28a428;
+  background-color: var(--lime-primary-hover, #2db82d);
+  border-color: var(--lime-primary-dark, #28a428);
 }
 
 .btn-secondary {
@@ -518,15 +529,15 @@ body {
 
 /* Outline Color Variants */
 .btn-outline-primary {
-  color: #32cd32;
+  color: var(--lime-primary, #32cd32);
   background-color: transparent;
-  border: 1px solid #32cd32;
+  border: 1px solid var(--lime-primary, #32cd32);
 }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #32cd32;
-  border-color: #32cd32;
+  background-color: var(--lime-primary, #32cd32);
+  border-color: var(--lime-primary, #32cd32);
 }
 
 .btn-outline-secondary {
@@ -635,9 +646,9 @@ body {
 }
 
 .form-control:focus {
-  border-color: #80d080;
+  border-color: var(--lime-primary-light, #80d080);
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(50, 205, 50, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(var(--lime-primary-rgb, 50, 205, 50), 0.25);
 }
 
 .form-control-lg {
@@ -776,7 +787,7 @@ select {
    ========================================================================== */
 /* Background Colors */
 .bg-primary {
-  background-color: #32cd32 !important;
+  background-color: var(--lime-primary, #32cd32) !important;
   color: white;
 }
 
@@ -822,7 +833,7 @@ select {
 
 /* Text Colors */
 .text-primary {
-  color: #32cd32 !important;
+  color: var(--lime-primary, #32cd32) !important;
 }
 .text-secondary {
   color: #6c757d !important;
@@ -949,6 +960,31 @@ select {
 }
 .mr-5 {
   margin-right: 3rem !important;
+}
+
+/* Auto Margin */
+.m-auto {
+  margin: auto !important;
+}
+.mt-auto {
+  margin-top: auto !important;
+}
+.mb-auto {
+  margin-bottom: auto !important;
+}
+.ml-auto {
+  margin-left: auto !important;
+}
+.mr-auto {
+  margin-right: auto !important;
+}
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
 }
 
 /* Padding Utilities */
@@ -1174,7 +1210,7 @@ select {
 
 /* Border Colors */
 .border-primary {
-  border-color: #32cd32 !important;
+  border-color: var(--lime-primary, #32cd32) !important;
 }
 .border-secondary {
   border-color: #6c757d !important;
@@ -1338,7 +1374,7 @@ pre code {
 }
 
 /* ==========================================================================
-   16. Navbar
+   16. Navbar and Badge
    ========================================================================== */
 .navbar {
   position: relative;
@@ -1376,13 +1412,81 @@ pre code {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #fff;
+  color: #212529;
   text-decoration: none;
 }
 
-.nav-link:hover {
-  color: #0056b3;
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--lime-primary, #32cd32);
   text-decoration: none;
+}
+
+.navbar-dark .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-dark .nav-link:hover,
+.navbar-dark .nav-link:focus {
+  color: #fff;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+
+.badge-primary {
+  color: #fff;
+  background-color: var(--lime-primary, #32cd32);
+}
+
+.badge-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+.badge-success {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.badge-danger {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.badge-warning {
+  color: #212529;
+  background-color: #ffc107;
+}
+
+.badge-info {
+  color: #fff;
+  background-color: #17a2b8;
+}
+
+.badge-light {
+  color: #212529;
+  background-color: #f8f9fa;
+}
+
+.badge-dark {
+  color: #fff;
+  background-color: #343a40;
+}
+
+.badge-lime {
+  color: #fff;
+  background-color: var(--lime-primary, #32cd32);
 }
 
 /* ==========================================================================
@@ -1531,30 +1635,30 @@ pre code {
    23. Custom Lime Framework Classes
    ========================================================================== */
 .border-lime {
-  border-color: #32cd32 !important;
+  border-color: var(--lime-primary, #32cd32) !important;
 }
 .text-lime {
-  color: #32cd32 !important;
+  color: var(--lime-primary, #32cd32) !important;
 }
 .bg-lime {
-  background-color: #32cd32 !important;
+  background-color: var(--lime-primary, #32cd32) !important;
   color: white;
 }
 .btn-lime {
   color: #fff;
-  background-color: #32cd32;
-  border-color: #32cd32;
+  background-color: var(--lime-primary, #32cd32);
+  border-color: var(--lime-primary, #32cd32);
 }
 .btn-lime:hover {
-  background-color: #2db82d;
-  border-color: #28a428;
+  background-color: var(--lime-primary-hover, #2db82d);
+  border-color: var(--lime-primary-dark, #28a428);
 }
 
 /* ==========================================================================
    24. Responsive Utilities
    ========================================================================== */
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
   .d-sm-none {
     display: none !important;
   }
@@ -1575,8 +1679,8 @@ pre code {
   }
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
   .d-md-none {
     display: none !important;
   }
@@ -1597,8 +1701,8 @@ pre code {
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
   .d-lg-none {
     display: none !important;
   }
@@ -1619,8 +1723,8 @@ pre code {
   }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
   .d-xl-none {
     display: none !important;
   }
@@ -1641,28 +1745,6 @@ pre code {
   }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .d-xxl-none {
-    display: none !important;
-  }
-  .d-xxl-block {
-    display: block !important;
-  }
-  .d-xxl-inline {
-    display: inline !important;
-  }
-  .d-xxl-inline-block {
-    display: inline-block !important;
-  }
-  .d-xxl-flex {
-    display: flex !important;
-  }
-  .d-xxl-inline-flex {
-    display: inline-flex !important;
-  }
-}
-
 /* Print */
 @media print {
   .d-print-none {
@@ -1676,5 +1758,141 @@ pre code {
   }
   .d-print-inline-block {
     display: inline-block !important;
+  }
+}
+
+/* ==========================================================================
+   25. Flex Utilities
+   ========================================================================== */
+/* Flex Direction */
+.flex-row {
+  flex-direction: row !important;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+.flex-column-reverse {
+  flex-direction: column-reverse !important;
+}
+
+/* Flex Wrap */
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+/* Flex Fill and Grow/Shrink */
+.flex-fill {
+  flex: 1 1 auto !important;
+}
+.flex-grow-0 {
+  flex-grow: 0 !important;
+}
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+.flex-shrink-0 {
+  flex-shrink: 0 !important;
+}
+.flex-shrink-1 {
+  flex-shrink: 1 !important;
+}
+
+/* Justify Content */
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+.justify-content-center {
+  justify-content: center !important;
+}
+.justify-content-between {
+  justify-content: space-between !important;
+}
+.justify-content-around {
+  justify-content: space-around !important;
+}
+.justify-content-evenly {
+  justify-content: space-evenly !important;
+}
+
+/* Align Items */
+.align-items-start {
+  align-items: flex-start !important;
+}
+.align-items-end {
+  align-items: flex-end !important;
+}
+.align-items-center {
+  align-items: center !important;
+}
+.align-items-baseline {
+  align-items: baseline !important;
+}
+.align-items-stretch {
+  align-items: stretch !important;
+}
+
+/* Align Self */
+.align-self-start {
+  align-self: flex-start !important;
+}
+.align-self-end {
+  align-self: flex-end !important;
+}
+.align-self-center {
+  align-self: center !important;
+}
+.align-self-baseline {
+  align-self: baseline !important;
+}
+.align-self-stretch {
+  align-self: stretch !important;
+}
+
+/* Responsive Flex Direction */
+@media (min-width: 576px) {
+  .flex-sm-row {
+    flex-direction: row !important;
+  }
+  .flex-sm-column {
+    flex-direction: column !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .flex-md-row {
+    flex-direction: row !important;
+  }
+  .flex-md-column {
+    flex-direction: column !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .flex-lg-row {
+    flex-direction: row !important;
+  }
+  .flex-lg-column {
+    flex-direction: column !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flex-xl-row {
+    flex-direction: row !important;
+  }
+  .flex-xl-column {
+    flex-direction: column !important;
   }
 }

@@ -1,7 +1,7 @@
 /*!
  * ==========================================================
  * Lime CSS Framework - CSS Variables (Custom Properties)
- * Version: 1.0.0
+ * Version: 1.0.1
  * ==========================================================
  */
 
@@ -10,6 +10,7 @@
   --lime-primary: #32cd32;
   --lime-primary-dark: #28a428;
   --lime-primary-light: #80d080;
+  --lime-primary-hover: #2db82d;
   --lime-primary-rgb: 50, 205, 50;
   
   /* Theme Colors */
